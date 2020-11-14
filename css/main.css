@@ -512,6 +512,10 @@ a:hover {
   padding: 0.25rem 1.125rem;
 }
 
+.c-btn--wide {
+  padding: 0.25rem 2rem;
+}
+
 .c-btn--sm {
   padding: 0 0.875rem;
   font-size: 0.75em;
@@ -561,6 +565,14 @@ a:hover {
 .c-btn--flat-light:hover {
   color: hsl(205, 20%, 30%);
   background-color: hsla(0, 0%, 100%, 0.9);
+}
+.c-btn--flat-base {
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(205, 20%, 30%, 0.9);
+}
+.c-btn--flat-base:hover {
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(205, 20%, 30%, 1);
 }
 
 .c-btn--fill {}
@@ -1656,6 +1668,19 @@ small {
 .page-title {
 }
 .page-title_label {
+}
+.symptom-graphic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.symptom_select-area {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+.symptom-list {
+  font-size: 1.25rem;
 }
 /* page--main } */
 

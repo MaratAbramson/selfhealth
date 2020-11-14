@@ -221,129 +221,38 @@
                 <div class="page-content u-container">
 
                   <section class="page-item u-py-xl u-px-sm">
-
-                    <template v-if="final = true">
-                      <div class="uk-child-width-1-2" uk-grid>
-                       
-                       <div class="">
-                        <div class="page-title section_item">
-                          <h2 class="page-title_label e-h2 tg-base--strong">
-                            Поставим предварительный диагноз
-                          </h2>
-                        </div>
-                        <form class="section_item" action="">
-
-                          <!--GENDER SELECT-->
-                          <div class="">
-                            <h3 class="e-h3 page-subtitle tg-base--strong">
-                              Укажите за кого проходите тест
-                            </h3>
-                            <ul class="u-mb-xl" uk-accordion="multiple: true">
-                              <li>
-                                <a class="uk-accordion-title" href="#">Взрослый</a>
-                                <div class="uk-accordion-content">
-                                  <label for="gender-0">
-                                    <input id="gender-0" type="radio" class="uk-radio u-mr-sm" name="gender" value="0" v-model="gender">
-                                    Мужчина
-                                  </label>
-                                  <br>
-                                  <label for="gender-1">
-                                    <input id="gender-1" type="radio" class="uk-radio u-mr-sm" name="gender" value="1" v-model="gender">
-                                    Женщина
-                                  </label>
-                                </div>
-                              </li>
-                              <li>
-                                <a class="uk-accordion-title" href="#">Ребенок</a>
-                                <div class="uk-accordion-content">
-                                  <label for="gender-2">
-                                    <input id="gender-2" type="radio" class="uk-radio u-mr-sm" name="gender" value="2" v-model="gender">
-                                    Мальчик
-                                  </label>
-                                  <br>
-                                  <label for="gender-3">
-                                    <input id="gender-3" type="radio" class="uk-radio u-mr-sm" name="gender" value="3" v-model="gender">
-                                    Девочка
-                                  </label>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
-                          <!--/GENDER SELECT-->
-
-                          <!--LOCATION SELECT-->
-                          <div class="">
-                            <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
-                              Выберите беспокоящую область
-                            </h3>
-                            <ul class="symptom-list uk-list">
-                              <li class="symptom-item">
-                                <label for="location-1">
-                                  <input id="location-1" type="radio" class="uk-radio u-mr-sm" name="location" value="1" v-model="location">
-                                  Голова
-                                </label>
-                              </li>
-                              <li class="symptom-item">
-                                <label for="location-2">
-                                  <input id="location-2" type="radio" class="uk-radio u-mr-sm" name="location" value="2" v-model="location">
-                                  Живот
-                                </label>
-                              </li>
-                            </ul>
-
-                            <button @click="sendStart" class="c-btn c-btn--wide c-btn--flat-base u-mt-lg">
-                              Далее
-                            </button>
-
-                          </div>
-                          <!--/LOCATION SELECT-->
-
-                        </form>
-                        </div>
-
-
-                        <div class="symptom-graphic">
-                          <h3 class="e-h3 page-subtitle tg-base--strong">
-                            Выберите беспокоящую область
-                          </h3>
-                          <div class="symptom_select-area">
-                            <img src="img/human-figure-front.svg" alt="фигура человека">
-                          </div>
-                        </div>
-
-                      </div>
-                    </template>
-
-                    <!--Q&A-->
-                    <template v-else>
-                      <div class="u-radius bg-base--weak uk-padding">
-                        <form action="" class="">
-                          <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
-                            Текст вопроса
-                          </h3>
-                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm">
-                            Нет
-                          </button>
-
-                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm">
-                            Да
-                          </button>
-
-                        </form>
-                      </div>
-                    </template>
-                    <!--/Q&A-->
-
+                    <div class="u-radius bg-base--weak uk-padding">
+                      <form action="" class="">
+                        <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
+                          Текст вопроса
+                        </h3>
+                        <ul class="symptom-list uk-list">
+                          <li class="symptom-item">
+                            <label for="item-id-1">
+                              <input id="item-id-1" type="radio" class="uk-radio u-mr-sm" name="group-number" value="item-id">
+                              Ответ 1
+                            </label>
+                          </li>
+                          <li class="symptom-item">
+                            <label for="item-id-2">
+                              <input id="item-id-2" type="radio" class="uk-radio u-mr-sm" name="group-number" value="item-id">
+                              Ответ 2
+                            </label>
+                          </li>
+                        </ul>
+                        <button class="c-btn c-btn--wide c-btn--flat-base u-mt-lg">Далее</button>
+                      </form>
+                    </div>
                   </section>
 
                 </div>
-                <!--/.page-content-->
+                <!--/.page-body-->
 
               </div>
               <!--/.page-row-->
 
             </div>
-            <!--/.page-body-->
+            <!--/.page-content-->
 
             <div class="page-footer">
 
@@ -364,9 +273,7 @@
 
 
     <footer class="site-footer">
-      <div class="site-footer_main">
 
-      </div>
     </footer>
     <!--/.site-footer-->
 
@@ -375,6 +282,7 @@
 
   <!--SCRIPTS-->
   <script async src="js/app.js"></script>
+  <script async src="js/main.js"></script>
   <!--/SCRIPTS-->
 
 </body>
