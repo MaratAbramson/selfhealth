@@ -158,17 +158,6 @@
 
       <div class="site-row">
 
-        <div class="site-sidebar">
-
-          <!-----------------
-            -----------------
-            if use site-sidebar
-            -----------------
-            ----------------->
-
-        </div>
-        <!--/.site-sidebar-->
-
         <div class="site-content">
 
           <div class="page">
@@ -207,22 +196,11 @@
 
               <div class="page-row">
 
-                <div class="page-sidebar">
-
-                  <!-----------------
-                    -----------------
-                    if use page-sidebar
-                    -----------------
-                    ----------------->
-
-                </div>
-                <!--/.page-sidebar-->
-
                 <div class="page-content u-container">
 
                   <section class="page-item u-py-xl u-px-sm">
 
-                    <template v-if="final = true">
+                    <!--<template v-if="final = true">-->
                       <div class="uk-child-width-1-2" uk-grid>
                        
                        <div class="">
@@ -291,7 +269,7 @@
                               </li>
                             </ul>
 
-                            <button @click="sendStart" class="c-btn c-btn--wide c-btn--flat-base u-mt-lg">
+                            <button class="c-btn c-btn--wide c-btn--flat-base u-mt-lg">
                               Далее
                             </button>
 
@@ -312,10 +290,10 @@
                         </div>
 
                       </div>
-                    </template>
+                    <!--</template>-->
 
                     <!--Q&A-->
-                    <template v-else>
+                    <!--<template v-else>-->
                       <div class="u-radius bg-base--weak uk-padding">
                         <form action="" class="">
                           <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
@@ -331,7 +309,7 @@
 
                         </form>
                       </div>
-                    </template>
+                    <!--</template>-->
                     <!--/Q&A-->
 
                   </section>

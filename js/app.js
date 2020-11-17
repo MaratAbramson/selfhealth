@@ -8,23 +8,19 @@ var app = new Vue({
     location: null,
     questionId: null,
     questionText: '',
-    final: false,
-  },
-  
-  methods: {
-    
-    sendStart: function (event) {
-      final = true;
-    },
-    
-    sendTrue() {
-      
-    },
-    
-    sendFalse() {
-      
-    },
-    
+    final: true
   }
+  
+//  methods: {
+//    
+//    sendTrue() {
+//      
+//    },
+//    
+//    sendFalse() {
+//      
+//    },
+//    
+//  }
   
 })
