@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 
 <!--
 <head>
@@ -53,12 +53,13 @@
   <!--<meta name="og:phone_number" content="+79991234567" />-->
 
   <meta property="og:image" content="картинка для preview" /><!-- .svg, .png, .jpg, .WebP -->
-  <meta property="og:image:type" content="image/svg+xml" /><!-- *MIME TYPE* "image/svg+xml", "image/png", "image/jpeg", "image/webp" -->
+  <meta property="og:image:type" content="image/svg+xml" />
+  <!-- *MIME TYPE* "image/svg+xml", "image/png", "image/jpeg", "image/webp" -->
   <meta property="og:image:width" content="256" />
   <meta property="og:image:height" content="256" />
 
   <!--*TITLE*-->
-  <title>{{Title}}</title>
+  <title th:text="${title}">Title</title>
 
   <!--*FAVICON*-->
   <link rel="shortcut icon" href="img/favicon.png"><!-- .ico, .png, .svg, .WebP -->
@@ -80,8 +81,8 @@
 
   <!--*FONTS*-->
   <!--*отдельный файл CSS для шрифтов (google за это снижает баллы)
-      *<link href="css/fonts.css" rel="stylesheet">
-      *-->
+        *<link href="css/fonts.css" rel="stylesheet">
+        *-->
 
 
   <!--*JAVA SCRIPT*-->
@@ -201,15 +202,15 @@
                   <section class="page-item u-py-xl u-px-sm">
 
                     <!--<template v-if="final = true">-->
-                      <div class="uk-child-width-1-2" uk-grid>
-                       
-                       <div class="">
+                    <div class="uk-child-width-1-2" uk-grid v-if="!hide">
+
+                      <div class="">
                         <div class="page-title section_item">
                           <h2 class="page-title_label e-h2 tg-base--strong">
                             Поставим предварительный диагноз
                           </h2>
                         </div>
-                        <form class="section_item" action="">
+                        <div class="section_item">
 
                           <!--GENDER SELECT-->
                           <div class="">
@@ -250,7 +251,7 @@
                           <!--/GENDER SELECT-->
 
                           <!--LOCATION SELECT-->
-                          <div class="">
+                          <div style="display: none" v-show="gender">
                             <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
                               Выберите беспокоящую область
                             </h3>
@@ -269,46 +270,52 @@
                               </li>
                             </ul>
 
-                            <button class="c-btn c-btn--wide c-btn--flat-base u-mt-lg">
+                            <button class="c-btn c-btn--wide c-btn--flat-base u-mt-lg" style="display: none" v-show="location" v-on:click="start">
                               Далее
                             </button>
 
                           </div>
                           <!--/LOCATION SELECT-->
 
-                        </form>
                         </div>
-
-
-                        <div class="symptom-graphic">
-                          <h3 class="e-h3 page-subtitle tg-base--strong">
-                            Выберите беспокоящую область
-                          </h3>
-                          <div class="symptom_select-area">
-                            <img src="img/human-figure-front.svg" alt="фигура человека">
-                          </div>
-                        </div>
-
                       </div>
+
+
+                      <div class="symptom-graphic" style="display: none" v-show="gender">
+                        <h3 class="e-h3 page-subtitle tg-base--strong">
+                          Выберите беспокоящую область
+                        </h3>
+                        <div class="symptom_select-area">
+                          <img src="img/human-figure-front.svg" alt="фигура человека">
+                        </div>
+                      </div>
+
+                    </div>
                     <!--</template>-->
 
                     <!--Q&A-->
                     <!--<template v-else>-->
-                      <div class="u-radius bg-base--weak uk-padding">
-                        <form action="" class="">
-                          <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
-                            Текст вопроса
-                          </h3>
-                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm">
+                    <div class="u-radius bg-base--weak uk-padding lay-center lay-centered" style="display: none" v-show="questionText">
+                      <div class="">
+                        <h3 class="e-h3 page-subtitle u-paragraph-limit tg-base--strong" id="symptom-title">
+                          {{ questionText }}
+                        </h3>
+                        <div class="u-group lay-center lay-centered">
+                          <button class="c-btn c-btn--wide c-btn--outline-base u-m-sm" v-on:click="send(false)" v-if="!final">
                             Нет
                           </button>
 
-                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm">
+                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm" v-on:click="send(true)" v-if="!final">
                             Да
                           </button>
 
-                        </form>
+                          <button class="c-btn c-btn--wide c-btn--flat-base u-m-sm" v-on:click="rerun" v-if="final">
+                            Пройти тест заново
+                          </button>
+                        </div>
+
                       </div>
+                    </div>
                     <!--</template>-->
                     <!--/Q&A-->
 
@@ -358,10 +365,6 @@
 </body>
 
 </html>
-
-
-
-
 
 
 <!--

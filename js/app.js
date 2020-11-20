@@ -1,26 +1,43 @@
-var question =
-  "http://127.0.0.1:41349/data/data.json";
-
 var app = new Vue({
-  el: '#app',
-  data: {
-    gender: null,
-    location: null,
-    questionId: null,
-    questionText: '',
-    final: true
-  }
-  
-//  methods: {
-//    
-//    sendTrue() {
-//      
-//    },
-//    
-//    sendFalse() {
-//      
-//    },
-//    
-//  }
-  
+    el: '#app',
+    data: {
+        gender: NaN,
+        location: NaN,
+        questionId: false,
+        questionText: false,
+        final: false,
+        hide: false
+    },
+
+    methods: {
+        rerun(){
+            document.location.href = "/";
+        },
+        start(){
+          app.hide = true;
+          app.send(false);
+        },
+        send (choise) {
+            const answer = {
+                gender: app.gender,
+                location: app.location,
+                questionId: app.questionId,
+                choise: choise
+        }
+            axios.post('/', answer, {
+                headers:{
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                }
+            })
+                .then((response) => {
+                    app.questionId = response.data.questionId;
+                    app.final = response.data.final;
+                    app.questionText = response.data.questionText;
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        },
+    }
 })
