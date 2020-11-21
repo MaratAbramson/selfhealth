@@ -8,9 +8,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Сервис рекомендательной самодиагностики здоровья">
-  <meta name="Keywords" content="симптом, симптомы, чекер, symptom, checker, узнать диагноз, онлайн, доктор, врачб в кармане, диагноз" />
-  <meta name="author" content="автор сайта" />
-  <meta name="copyright" content="копирайт" />
+  <meta name="Keywords" content="симптом, симптомы, чекер, symptom, checker, узнать диагноз, онлайн, доктор, врач в кармане, диагноз" />
+  <meta name="author" content="MedExSYS" />
 
   <!--Помогаем Google определить месторасположение, а так же другую контактную информацию.-->
   <meta property="business:contact_data:email" content="info@medexsys.ru" />
@@ -81,10 +80,10 @@
 
       <div class="site-header_mainbar">
 
-        <div class="site-header_mainbar-content u-container">
+        <div class="site-header_mainbar-content u-container uk-conatainer">
           <a class="app-info" href="/">
             <picture class="app-info_logo">
-              <img class="app-info_logo-img" src="img/Logo.svg" alt="selfhealth logotype">
+              <img class="app-info_logo-img" src="img/Logo.svg" alt="selfhealth logotype" height="48" width="48">
             </picture>
             <div class="app-info_label uk-light">
               <h1 class="app-info_name">
@@ -96,7 +95,8 @@
             </div>
           </a>
           <nav class="site-header_nav">
-            <ul class="site-header_menu c-list">
+
+            <ul class="site-header_menu c-list uk-visible@m">
               <li class="site-header_menu-item">
                 <a href="#" class="c-btn c-btn--outline-light site-header_menu-link">
                   расшифровать анализы
@@ -113,6 +113,17 @@
                 </a>
               </li>
             </ul>
+
+            <ul class="site-header_menu c-list uk-hidden@m">
+              <li class="site-header_menu-item">
+                <a href="#modal-center" class="c-btn c-btn--text-light c-btn--icon u-circled" uk-toggle>
+                  <svg class="c-btn_icon site-header_menu-icon" width="32" height="32" viewBox="0 0 32 32">
+                    <use xlink:href="/img/icons/burger.svg#icon-burger"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+
           </nav>
         </div>
 
@@ -133,7 +144,7 @@
             <div class="page-header">
 
               <div class="page-header_nav">
-                <ul class="page-header_menu u-container c-list">
+                <ul class="page-header_menu u-container uk-container c-list">
                   <li class="page-header_menu-item">
                     <a href="#" class="page-header_menu-link c-btn c-btn--md c-btn--text-base">
                       О сервисе
@@ -168,8 +179,7 @@
 
                   <section class="page-item u-py-xl u-px-sm">
 
-                    <!--<template v-if="final = true">-->
-                    <div class="uk-child-width-1-2" uk-grid v-if="!hide">
+                    <div class="uk-child-width-1-1 uk-child-width-1-2@m" uk-grid v-if="!hide">
 
                       <div class="">
                         <div class="page-title section_item">
@@ -222,20 +232,17 @@
                             <h3 class="e-h3 page-subtitle tg-base--strong" id="symptom-title">
                               Выберите беспокоящую область
                             </h3>
-                            <ul class="symptom-list uk-list">
+                            <ul th:each="sympt : ${symptoms}" class="symptom-list uk-list">
                               <li class="symptom-item">
-                                <label for="location-1">
-                                  <input id="location-1" type="radio" class="uk-radio u-mr-sm" name="location" value="1" v-model="location">
-                                  Голова
-                                </label>
-                              </li>
-                              <li class="symptom-item">
-                                <label for="location-2">
-                                  <input id="location-2" type="radio" class="uk-radio u-mr-sm" name="location" value="2" v-model="location">
-                                  Живот
+                                <!--/*@thymesVar id="key" type="java.lang.Integer"*/-->
+                                <label th:for="location- + ${sympt.key}" for="location-1">
+                                  <!--/*@thymesVar id="key" type="java.lang.Integer"*/-->
+                                  <!--/*@thymesVar id="value" type="java.lang.String"*/-->
+                                  <input th:value="${sympt.key}" th:text="${sympt.value}" th:id="location- + ${sympt.key}" id="location-1" type="radio" class="uk-radio u-mr-sm" name="location" value="1" v-model="location">
                                 </label>
                               </li>
                             </ul>
+
 
                             <button class="c-btn c-btn--wide c-btn--flat-base u-mt-lg" style="display: none" v-show="location" v-on:click="start">
                               Далее
@@ -248,7 +255,7 @@
                       </div>
 
 
-                      <div class="symptom-graphic" style="display: none" v-show="gender">
+                      <div class="symptom-graphic uk-visible@m" style="display: none" v-show="gender">
                         <h3 class="e-h3 page-subtitle tg-base--strong">
                           Выберите беспокоящую область
                         </h3>
@@ -258,10 +265,8 @@
                       </div>
 
                     </div>
-                    <!--</template>-->
 
                     <!--Q&A-->
-                    <!--<template v-else>-->
                     <div class="u-radius bg-base--weak uk-padding lay-center lay-centered" style="display: none" v-show="questionText">
                       <div class="">
                         <h3 class="e-h3 page-subtitle u-paragraph-limit tg-base--strong" id="symptom-title">
@@ -283,7 +288,6 @@
 
                       </div>
                     </div>
-                    <!--</template>-->
                     <!--/Q&A-->
 
                   </section>
@@ -321,6 +325,53 @@
       </div>
     </footer>
     <!--/.site-footer-->
+
+    <!--MODALS-->
+    <div id="modal-center" class="uk-flex-top bg-base--strong o-mobile-menu" uk-modal>
+
+      <button class="uk-modal-close-default c-btn c-btn--icon c-btn--flat-base" type="button" uk-close></button>
+
+      <div class="uk-modal-dialog uk-modal-body o-mobile-menu_content">
+
+        <a class="app-info" href="/">
+          <picture class="app-info_logo">
+            <img class="app-info_logo-img" src="img/Logo.svg" alt="selfhealth logotype" height="48" width="48">
+          </picture>
+          <div class="app-info_label uk-light">
+            <h1 class="app-info_name">
+              selfhealth
+            </h1>
+            <span class="app-info_subname">
+              #Врач в кармане
+            </span>
+          </div>
+        </a>
+
+        <ul class="o-mobile-menu_nav c-list lay-col">
+          <li class="site-header_menu-item u-py-sm">
+            <a href="#" class="c-btn c-btn--text-light site-header_menu-link">
+              расшифровать анализы
+            </a>
+          </li>
+          <li class="site-header_menu-item u-py-sm">
+            <a href="#" class="c-btn c-btn--text-light site-header_menu-link">
+              проверить симптомы
+            </a>
+          </li>
+          <li class="site-header_menu-item u-py-sm">
+            <a href="#" class="c-btn c-btn--text-light site-header_menu-link">
+              вход или регистрация
+            </a>
+          </li>
+        </ul>
+
+        <span class="app-info_subname">
+          By MedExSYS
+        </span>
+
+      </div>
+    </div>
+    <!--/MODALS-->
 
   </div>
   <!--/.site-->
