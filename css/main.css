@@ -1739,6 +1739,26 @@ small {
 .o-mobile-menu_nav {
   align-items: center;
 }
+
+/*anatonic-figure { */
+.anatomic-item:hover path {
+  fill-opacity: 0.35;
+  stroke-opacity: 0.15;
+}
+
+#anatomic-legs.anatomic-legs path,
+#anatomic-arms.anatomic-arms path,
+#anatomic-groin.anatomic-groin path,
+#anatomic-pelvic.anatomic-pelvic path,
+#anatomic-belly.anatomic-belly path,
+#anatomic-chest.anatomic-chest path,
+#anatomic-neck.anatomic-neck path,
+#anatomic-head.anatomic-head path {
+  fill-opacity: 0.35;
+  stroke-opacity: 0.15;
+}
+/*anatonic-figure } */
+
 /* -OBJECTS (MODULES)- } */
 
 
