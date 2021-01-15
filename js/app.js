@@ -41,7 +41,6 @@ var app = new Vue({
         })
     },
     setLocation() {
-      app.isActive = true;
       app.figureLocation = event.target.parentNode.id;
       app.location = event.target.parentNode.getAttribute('data-location-value');
   }

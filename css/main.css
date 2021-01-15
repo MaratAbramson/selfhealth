@@ -1590,6 +1590,7 @@ small {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 96px;
   width: 100%;
   background-color: hsl(200, 90%, 55%);
 }
@@ -1668,6 +1669,7 @@ small {
 .page-header_nav {
   display: flex;
   justify-content: center;
+  height: 56px;
 }
 .page-header_menu {
   display: flex;
@@ -1681,6 +1683,14 @@ small {
   text-transform: none;
   font-size: 1.125rem;
   font-weight: 400;
+}
+.page-item {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.page-item:first-of-type {
+  min-height: calc(100vh - 96px - 56px);
 }
 .section_item {
   margin-bottom: 4rem;
@@ -1747,17 +1757,21 @@ small {
 }
 
 #anatomic-legs.anatomic-legs path,
-#anatomic-arms.anatomic-arms path,
-#anatomic-groin.anatomic-groin path,
-#anatomic-pelvic.anatomic-pelvic path,
 #anatomic-belly.anatomic-belly path,
-#anatomic-chest.anatomic-chest path,
 #anatomic-neck.anatomic-neck path,
 #anatomic-head.anatomic-head path {
   fill-opacity: 0.35;
   stroke-opacity: 0.15;
 }
 /*anatonic-figure } */
+.o-page-item_pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.o-page-item_pic img {
+  height: 396px;
+}
 
 /* -OBJECTS (MODULES)- } */
 
@@ -1862,6 +1876,16 @@ small {
   .page-header_menu {
     flex-direction: column;
     align-items: center;
+  }
+  .page-header_nav {
+    height: 164px;
+  }
+  .page-item:first-of-type {
+  min-height: calc(100vh - 96px - 164px);
+}
+  .page-item {
+    padding-left: 16px;
+    padding-right: 16px;
   }
   
   .app-info_name {
