@@ -77,50 +77,6 @@ html {
 
 /* -Montserrat- { */
 
-/* montserrat-100 - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-100.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-100.woff') format('woff');
-}
-
-/* montserrat-100italic - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 100;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-100italic.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-100italic.woff') format('woff');
-}
-
-/* montserrat-200 - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-200.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-200.woff') format('woff');
-}
-
-/* montserrat-200italic - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 200;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-200italic.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-200italic.woff') format('woff');
-}
-
 /* montserrat-300 - latin_cyrillic */
 @font-face {
   font-family: 'Montserrat';
@@ -163,28 +119,6 @@ html {
   src:
     url('../fonts/montserrat/montserrat-v14-latin_cyrillic-italic.woff2') format('woff2'),
     url('../fonts/montserrat/montserrat-v14-latin_cyrillic-italic.woff') format('woff');
-}
-
-/* montserrat-500 - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-500.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-500.woff') format('woff');
-}
-
-/* montserrat-500italic - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 500;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-500italic.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-500italic.woff') format('woff');
 }
 
 /* montserrat-600 - latin_cyrillic */
@@ -230,51 +164,6 @@ html {
     url('../fonts/montserrat/montserrat-v14-latin_cyrillic-700italic.woff2') format('woff2'),
     url('../fonts/montserrat/montserrat-v14-latin_cyrillic-700italic.woff') format('woff');
 }
-
-/* montserrat-800 - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-800.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-800.woff') format('woff');
-}
-
-/* montserrat-800italic - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 800;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-800italic.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-800italic.woff') format('woff');
-}
-
-/* montserrat-900 - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-900.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-900.woff') format('woff');
-}
-
-/* montserrat-900italic - latin_cyrillic */
-@font-face {
-  font-family: 'Montserrat';
-  font-style: italic;
-  font-weight: 900;
-  font-display: swap;
-  src:
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-900italic.woff2') format('woff2'),
-    url('../fonts/montserrat/montserrat-v14-latin_cyrillic-900italic.woff') format('woff');
-}
-
 /* -Montserrat- } */
 
 
@@ -395,6 +284,7 @@ a:hover {
 }
 
 .site-footer {
+  background-color: hsl(200, 90%, 55%);
 }
 
 /* -SITE BASIC PROPERTIES- } */
@@ -453,7 +343,7 @@ a:hover {
 }
 
 .page-content {
-  overflow: hidden;
+  width: 100%;
 }
 
 /* -PAGE BASIC- } */
@@ -1585,7 +1475,37 @@ small {
 }
 .site-header {
 }
+.site-footer {
+  justify-content: center;
+}
+.site-footer_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 32px;
+}
 
+.site-footer_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+.site-footer_item-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 100%);
+}
+.site-footer_social {
+  display: flex;
+  justify-content: center;
+}
+.site-footer_social-item {
+  margin: 0 8px;
+}
+.site-footer_link {
+  text-decoration: underline;
+}
 .site-header_mainbar {
   display: flex;
   justify-content: center;
@@ -1670,6 +1590,7 @@ small {
   display: flex;
   justify-content: center;
   height: 56px;
+  background-color: hsl(204, 100%, 100%);
 }
 .page-header_menu {
   display: flex;
@@ -1687,7 +1608,29 @@ small {
 .page-item {
   min-height: 100vh;
   display: flex;
+  justify-content: center;
   align-items: center;
+  background-size: 100vw 100vh;
+}
+.page-item:nth-child(1) {
+  background-image: url('/img/bg-1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.page-item:nth-child(2) {
+  background-image: url('/img/bg-2.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-item:nth-child(3) {
+  background-image: url('/img/bg-3.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.page-item:nth-child(4) {
+  background-image: url('/img/bg-4.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .page-item:first-of-type {
   min-height: calc(100vh - 96px - 56px);
@@ -1699,9 +1642,43 @@ small {
 }
 .page-title_label {
 }
+.o-page-item_advantage-list {
+  counter-reset: number;
+  list-style-type: none;
+}
+.o-page-item_advantage-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.o-page-item_advantage {
+  display: flex;
+  list-style-position: inside;
+}
+
+.o-page-item_advantage::marker {
+
+}
+.o-page-item_advantage::before {
+  position: static;
+  font-size: 110px;
+  font-weight: 700;
+  counter-increment: number;
+  content: counter(number)"\a0";
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  line-height: normal;
+  margin: 0;
+  padding-left: 24px;
+}
+.o-page-item_advantage:nth-child(2n-1) {
+  background-color: hsl(204, 100%, 95%);
+}
 .symptom-graphic {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 .symptom_select-area {
@@ -1711,6 +1688,17 @@ small {
 }
 .symptom-list {
   font-size: 1.25rem;
+}
+
+.o-accordion-title {
+  display: inline-flex;
+  flex-direction: row-reverse;
+}
+.o-contacts_link-label:hover {
+  text-decoration: underline;
+}
+.o-contacts_icon {
+  margin-right: 8px;
 }
 /* page--main } */
 
@@ -1863,7 +1851,7 @@ small {
 
 @media (max-width: 575.98px) {
   /* width<576 */
-  
+
 }
 
 @media (max-width: 767.98px) {
@@ -1887,7 +1875,7 @@ small {
     padding-left: 16px;
     padding-right: 16px;
   }
-  
+
   .app-info_name {
     font-size: 24px;
   }

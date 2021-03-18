@@ -22,11 +22,11 @@
 .tg-base--strong-d { color: hsl(0, 0%, 0%); }
 .tg-base--strong-h { color: hsl(0, 0%, 0%); }
 .tg-base--strong-h:hover { color: hsl(0, 0%, 0%); }
-.tg-base--weak     { color: hsl(0, 0%, 0%); }
+.tg-base--weak     { color: hsl(215, 75%, 100%); }
 .tg-base--weak-l   { color: hsl(0, 0%, 0%); }
 .tg-base--weak-d   { color: hsl(0, 0%, 0%); }
-.tg-base--weak-h   { color: hsl(0, 0%, 0%); }
-.tg-base--weak-h:hover { color: hsl(0, 0%, 0%); }
+.tg-base--weak-h   { color: hsl(215, 75%, 95%); }
+.tg-base--weak-h:hover { color: hsl(215, 75%, 100%); }
 
 /* Lines */
 .ln-base--strong   { border-color: hsl(0, 0%, 0%); }
