@@ -1613,22 +1613,22 @@ small {
   background-size: 100vw 100vh;
 }
 .page-item:nth-child(1) {
-  background-image: url('/img/bg-1.svg');
+  background-image: url('../img/bg-1.svg');
   background-repeat: no-repeat;
   background-size: contain;
 }
 .page-item:nth-child(2) {
-  background-image: url('/img/bg-2.svg');
+  background-image: url('../img/bg-2.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
 .page-item:nth-child(3) {
-  background-image: url('/img/bg-3.svg');
+  background-image: url('../img/bg-3.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
 .page-item:nth-child(4) {
-  background-image: url('/img/bg-4.svg');
+  background-image: url('../img/bg-4.svg');
   background-repeat: no-repeat;
   background-position: center;
 }
